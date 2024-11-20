@@ -1,0 +1,205 @@
+\documentclass[9pt]{article}
+\usepackage[margin=0.4in]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{circuitikz}
+
+\setlength{\columnsep}{0.8cm}
+\setlength{\parindent}{0in}
+
+\title{
+    \vspace{-2em}
+    \large EECE 2150: Quiz 6 Notesheet \hfill Sean Balbale \hfill November 20, 2024
+    \vspace{-4em}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+
+% Capacitors and Inductors
+\section{Capacitors and Inductors}
+
+\subsection{Capacitors}
+A capacitor stores energy in the electric field between its plates.
+
+\textbf{Key Relationships}:
+\[
+C = \frac{Q}{V}, \quad i(t) = C \frac{dv(t)}{dt}, \quad v(t) - v(t_0) = \frac{1}{C} \int_{t_0}^t i(\tau) d\tau
+\]
+\[
+w(t) = \frac{1}{2} C v^2(t), \quad P(t) = i(t)v(t)
+\]
+
+\textbf{Behavior}:
+\begin{itemize}\itemsep0pt
+    \item Acts as an open circuit in steady-state DC.
+    \item Voltage cannot change instantaneously (\(i \to \infty\) for rapid voltage changes).
+    \item Frequency selective: responds differently to fast and slow voltage changes.
+\end{itemize}
+
+\textbf{Capacitor Combinations}:
+\begin{itemize}\itemsep0pt
+    \item Series: \( \frac{1}{C_{\text{eq}}} = \frac{1}{C_1} + \frac{1}{C_2} + \cdots \)
+    \item Parallel: \( C_{\text{eq}} = C_1 + C_2 + \cdots \)
+\end{itemize}
+
+---
+
+\subsection{Inductors}
+An inductor stores energy in its magnetic field.
+
+\textbf{Key Relationships}:
+\[
+v(t) = L \frac{di(t)}{dt}, \quad i(t) - i(t_0) = \frac{1}{L} \int_{t_0}^t v(\tau) d\tau
+\]
+\[
+w(t) = \frac{1}{2} L i^2(t), \quad P(t) = v(t)i(t)
+\]
+
+\textbf{Behavior}:
+\begin{itemize}\itemsep0pt
+    \item Acts as a short circuit in steady-state DC.
+    \item Current cannot change instantaneously (\(v \to \infty\) for rapid current changes).
+    \item Frequency selective: opposes changes in current.
+\end{itemize}
+
+\textbf{Inductor Combinations}:
+\begin{itemize}\itemsep0pt
+    \item Series: \( L_{\text{eq}} = L_1 + L_2 + \cdots \)
+    \item Parallel: \( \frac{1}{L_{\text{eq}}} = \frac{1}{L_1} + \frac{1}{L_2} + \cdots \)
+\end{itemize}
+
+---
+
+% RC and RL Circuits
+\section{RC and RL Circuits}
+
+\subsection{RC Circuits}
+\textbf{Capacitor Properties}:
+\[
+i(t) = C \frac{dv(t)}{dt}, \quad w(t) = \frac{1}{2} C v^2(t)
+\]
+- Capacitor acts as an open circuit in steady-state DC.
+
+\textbf{Transient Analysis}:
+\[
+v(t) = V_f + (V_i - V_f)e^{-t/\tau}, \quad \tau = RC
+\]
+\[
+i(t) = \frac{V_s}{R}e^{-t/RC}
+\]
+
+\subsection{RL Circuits}
+\textbf{Inductor Properties}:
+\[
+v(t) = L \frac{di(t)}{dt}, \quad w(t) = \frac{1}{2} L i^2(t)
+\]
+- Inductor acts as a short circuit in steady-state DC.
+
+\textbf{Transient Analysis}:
+\[
+i(t) = I_f + (I_i - I_f)e^{-t/\tau}, \quad \tau = \frac{L}{R}
+\]
+\[
+v(t) = L \frac{di(t)}{dt}
+\]
+
+---
+
+% Kirchhoff’s Laws
+\section{Kirchhoff’s Laws}
+
+\subsection{Kirchhoff's Current Law (KCL)}
+The sum of currents entering and leaving a node is zero:
+\[
+\sum I_{\text{in}} = \sum I_{\text{out}}
+\]
+
+\subsection{Kirchhoff's Voltage Law (KVL)}
+The sum of voltage drops in a closed loop equals the sum of voltage rises:
+\[
+\sum V_{\text{drops}} = \sum V_{\text{rises}}
+\]
+
+---
+
+% Nodal Analysis
+\section{Nodal Analysis}
+
+\subsection{Steps for Nodal Analysis}
+\begin{enumerate}\itemsep0pt
+    \item Identify essential nodes.
+    \item Choose a reference node (ground).
+    \item Apply KCL at each node using node voltages.
+    \item Solve the system of equations for unknown voltages.
+\end{enumerate}
+
+Example for RC Circuit:
+\[
+\frac{v_1 - v_2}{R} + C\frac{dv_2}{dt} = 0
+\]
+
+---
+
+% Mesh Analysis
+\section{Mesh Analysis}
+
+\subsection{Steps for Mesh Analysis}
+\begin{enumerate}\itemsep0pt
+    \item Identify meshes (loops without other loops inside).
+    \item Assign mesh currents.
+    \item Apply KVL in each mesh.
+    \item Solve for mesh currents.
+\end{enumerate}
+
+---
+
+% Transient Responses
+\section{Transient Responses}
+
+\subsection{General Solution}
+The total response is the sum of the natural and forced responses:
+\[
+y(t) = y_h(t) + y_p(t)
+\]
+- \(y_h(t)\): Homogeneous solution, exponential decay:
+\[
+y_h(t) = Ke^{-t/\tau}
+\]
+- \(y_p(t)\): Particular solution, steady-state response.
+
+\subsection{Time Constant}
+- RC Circuits: \( \tau = R_{eq}C \)
+- RL Circuits: \( \tau = \frac{L}{R_{eq}} \)
+
+---
+
+% Example: Step Response
+\section{Example: Step Response}
+
+\subsection{RC Circuit}
+Voltage across capacitor:
+\[
+v_C(t) = V(1 - e^{-t/RC})
+\]
+Current through resistor:
+\[
+i_R(t) = \frac{V}{R}e^{-t/RC}
+\]
+
+\subsection{RL Circuit}
+Current through inductor:
+\[
+i_L(t) = I(1 - e^{-tR/L})
+\]
+Voltage across resistor:
+\[
+v_R(t) = IR(1 - e^{-tR/L})
+\]
+
+\end{multicols}
+\end{document}
