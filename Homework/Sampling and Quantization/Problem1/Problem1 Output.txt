@@ -1,0 +1,26 @@
+>> problem1
+a) Resolution of the A/D: 2.50 V
+b) Maximum quantization error: 1.25 V
+c) Quantization levels:
+   -8.7500
+   -6.2500
+   -3.7500
+   -1.2500
+    1.2500
+    3.7500
+    6.2500
+    8.7500
+
+
+d) Discrete-time frequency Omega: 0.25π radians/sample
+e) Minimum sampling frequency: 2000 Hz
+>> 
+
+
+
+
+
+
+
+
+

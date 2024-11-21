@@ -1,0 +1,26 @@
+>> problem4
+Part (a) Original frequencies (Hz): 1000  1500  3000
+Part (b) Discrete-time frequencies (rad/sample): 1.57, 2.36, -1.57
+Part (c) Reconstructed frequencies (Hz): 1000  1500
+>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

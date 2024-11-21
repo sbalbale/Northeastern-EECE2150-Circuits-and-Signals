@@ -1,0 +1,34 @@
+>> problem1
+Part (a) Resolution of the A/D: 2.50 V
+Part (b) Maximum quantization error: 1.25 V
+Part (c) Quantization levels:
+   -8.7500
+   -6.2500
+   -3.7500
+   -1.2500
+    1.2500
+    3.7500
+    6.2500
+    8.7500
+
+
+Part (d) Discrete-time frequency Omega: 0.25π radians/sample
+Part (e) Minimum sampling frequency: 2000 Hz
+>> problem2
+Part (a) Minimum number of bits required (without amplification): 15 bits
+Part (b) Minimum sampling frequency required: 8000 Hz
+Part (c) Amplifier gain factor required: 25.00
+         Minimum number of bits required (with amplification): 10 bits
+>> problem3
+Part (a): Minimum sampling rate is 2000.0 Hz
+Part (b): Number of quantization levels is 1024
+Part (c): Maximum quantization error is 0.009766 V
+Part (d): Number of samples needed is 2400000
+Part (e): New minimum sampling rate is 5000.0 Hz
+Part (e): Number of quantization levels remains 1024
+Part (e): Maximum quantization error remains 0.009766 V
+>> problem4
+Part (a) Original frequencies (Hz): 1000  1500  3000
+Part (b) Discrete-time frequencies (rad/sample): 1.57, 2.36, -1.57
+Part (c) Reconstructed frequencies (Hz): 1000  1500
+>> 

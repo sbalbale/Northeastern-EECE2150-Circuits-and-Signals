@@ -1,0 +1,26 @@
+>> problem2
+a) Minimum number of bits required (without amplification): 15 bits
+b) Minimum sampling frequency required: 8000 Hz
+c) Amplifier gain factor required: 25.00
+   Minimum number of bits required (with amplification): 10 bits
+>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

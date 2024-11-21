@@ -1,0 +1,26 @@
+>> problem3
+Part (a): Minimum sampling rate is 2000.0 Hz
+Part (b): Number of quantization levels is 1024
+Part (c): Maximum quantization error is 0.009766 V
+Part (d): Number of samples needed is 2400000
+Part (e): New minimum sampling rate is 5000.0 Hz
+Part (e): Number of quantization levels remains 1024
+Part (e): Maximum quantization error remains 0.009766 V
+>> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
