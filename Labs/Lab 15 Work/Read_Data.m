@@ -1,26 +1,15 @@
-% Initialize the NI USB-6001 device
-daqreset;
-d = daq("ni")
-addinput(d, "Dev1", "ai0", "Voltage")
+% Load the ECG data from the .mat file
+load('ecg_data.mat', 'ecg_data');
 
-% Set the acquisition rate and duration
-fs = 1000 % Sampling frequency in Hz
-duration = 10 % Duration in seconds
-d.Rate = fs
-
-% Acquire 5 ECG signals
-num_signals = 5;
-ecg_data = cell(1, num_signals);
-for i = 1:num_signals
-    fprintf('Acquiring ECG signal %d...\n', i);
-    ecg_data{i} = read(d, seconds(duration));
+% Check if the data is loaded correctly
+if ~exist('ecg_data', 'var')
+    error('Failed to load ecg_data from ecg_data.mat');
 end
 
-% Display variable names in the timetable
-disp(ecg_data{1}.Properties.VariableNames);
-
-% Save the data
-save('ecg_data.mat', 'ecg_data');
+% Set the acquisition rate and duration
+fs = 1000; % Sampling frequency in Hz
+duration = 10; % Duration in seconds
+num_signals = length(ecg_data);
 
 % Plot the raw voltage data
 figure('Name', 'Raw ECG Signals');
@@ -33,7 +22,7 @@ for i = 1:num_signals
 end
 
 % Define the gain of the analog system
-gain = 1000 % Example gain value
+gain = 1000; % Example gain value
 
 % Plot the scaled voltage data
 figure('Name', 'Scaled ECG Signals');
