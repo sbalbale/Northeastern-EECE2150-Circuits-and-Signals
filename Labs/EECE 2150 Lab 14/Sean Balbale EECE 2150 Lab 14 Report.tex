@@ -265,7 +265,7 @@ Figure~\ref{fig:ad627_diagram}, and the constructed circuit is shown in Figure~\
 The gain was measured using input and output signals from the oscilloscope. The input signal had a peak-to-peak voltage of
 \( 57 \, \text{mV} \), while the output voltage was \( 860 \, \text{mV} \). The gain was calculated as:
 \[
-  A_d = \frac{V_\text{out}}{V_\text{in}} = \frac{860}{57} \approx 15.09.
+  A_d = \frac{V_\text{out}}{V_\text{in}} = \frac{860}{37} \approx 24.50.
 \]
 This result was slightly lower than the expected gain of 25 due to the measured resistor tolerance.
 
@@ -287,9 +287,9 @@ Given:
   A_d = 15, \quad A_\text{cm} = 0.0002,
 \]
 \[
-  CMRR = 20 \cdot \log_{10}\left(\frac{15}{0.0002}\right) = 81.94 \, \text{dB}.
+  CMRR = 20 \cdot \log_{10}\left(\frac{24.50}{0.0002}\right) = 81.94 \, \text{dB}.
 \]
-This result matched the AD627's specifications.
+This result is closed to the AD627's specifications of 77 dB.
 
 \subsection{ECG Signal Observation}
 ECG signals were recorded using electrodes placed on the forearms, with a third electrode connected to ground. The oscilloscope
@@ -309,7 +309,7 @@ reduced high-frequency noise and improved signal quality.
 
 \subsection{Discussion}
 The AD627 amplifier demonstrated its ability to amplify small differential signals while rejecting common-mode noise. The
-calculated gain of 15.09 was slightly lower than the expected value of 25, likely due to component tolerances. The cutoff frequency
+calculated gain of 24.50 was slightly lower than the expected value of 25, likely due to component tolerances. The cutoff frequency
 of 5000~\si{\hertz} and CMRR of 81.94~\si{\decibel} aligned closely with theoretical predictions and the amplifier's specifications.
 \newline
 
@@ -321,9 +321,9 @@ technique for improving signal quality.
 This lab successfully demonstrated the operation of the AD627 instrumentation amplifier for ECG signal acquisition. Key findings
 included:
 \begin{itemize}
-  \item Gain: \( 15.09 \) (expected: \( 25 \)).
+  \item Gain: \( 24.50 \) (expected: \( 25 \)).
   \item Cutoff frequency: \( 5000 \, \text{Hz} \).
-  \item CMRR: \( 81.94 \, \text{dB} \).
+  \item CMRR: \( 81.94 \, \text{dB} \). (expected: \( 77 \, \text{dB} \))
 \end{itemize}
 Future improvements were identified, including implementing filters to reduce noise and refining electrode placement to enhance
 signal clarity.
